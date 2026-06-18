@@ -8,8 +8,8 @@ $scriptDir = $PSScriptRoot
 & (Join-Path $scriptDir "Check-Updates.ps1")
 
 $today = Get-Date -Format "yyyy-MM-dd"
-$reportPath = Join-Path $scriptDir "reports" "update-report-$today.md"
-$countsPath = Join-Path $scriptDir "reports" "update-counts.json"
+$reportPath = Join-Path (Join-Path $scriptDir "reports") "update-report-$today.md"
+$countsPath = Join-Path (Join-Path $scriptDir "reports") "update-counts.json"
 
 if (-not (Test-Path $countsPath)) {
     exit
